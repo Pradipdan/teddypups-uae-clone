@@ -140,3 +140,4 @@ npm run build
 
 ---
 © 2026 TeddyPups U.A.E. Clone — Built with passion and attention to detail.
+
