@@ -24,3 +24,4 @@ routes.forEach((route) => {
 });
 
 console.log('Successfully prepared static routes and 404.html for GitHub Pages!');
+

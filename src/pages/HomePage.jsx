@@ -646,3 +646,4 @@ export default function HomePage({ navigate, onSelectPuppy, onInquire }) {
     </div>
   );
 }
+

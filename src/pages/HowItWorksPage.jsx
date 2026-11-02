@@ -275,3 +275,4 @@ export default function HowItWorksPage({ navigate }) {
     </div>
   );
 }
+

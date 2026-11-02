@@ -110,3 +110,4 @@ export default function PuppyCard({ puppy, onSelect, onInquire }) {
     </div>
   );
 }
+

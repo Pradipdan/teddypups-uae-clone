@@ -464,3 +464,4 @@ export default function PuppyDetailPage({ puppySlug, navigate, onSelectPuppy, on
     </div>
   );
 }
+

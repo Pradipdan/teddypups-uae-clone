@@ -196,3 +196,4 @@ export default function PuppiesPage({ onSelectPuppy, onInquire, initialFilter = 
     </div>
   );
 }
+
