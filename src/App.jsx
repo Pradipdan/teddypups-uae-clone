@@ -13,23 +13,36 @@ import HowItWorksPage from './pages/HowItWorksPage';
 import FaqPage from './pages/FaqPage';
 import ContactPage from './pages/ContactPage';
 
+const getNormalizedPath = () => {
+  let p = window.location.pathname;
+  if (p.startsWith('/teddypups-uae-clone')) {
+    p = p.replace('/teddypups-uae-clone', '') || '/';
+  }
+  return p;
+};
+
+const getBasePath = () => {
+  return window.location.pathname.startsWith('/teddypups-uae-clone') ? '/teddypups-uae-clone' : '';
+};
+
 export default function App() {
-  const [currentPath, setCurrentPath] = useState(window.location.pathname);
+  const [currentPath, setCurrentPath] = useState(getNormalizedPath());
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedPuppyForInquiry, setSelectedPuppyForInquiry] = useState(null);
 
   // Synchronize browser history and back/forward buttons
   useEffect(() => {
     const handlePopState = () => {
-      setCurrentPath(window.location.pathname);
+      setCurrentPath(getNormalizedPath());
     };
     window.addEventListener('popstate', handlePopState);
     return () => window.removeEventListener('popstate', handlePopState);
   }, []);
 
   const navigate = (path) => {
-    if (window.location.pathname !== path) {
-      window.history.pushState({}, '', path);
+    const fullPath = getBasePath() + path;
+    if (window.location.pathname !== fullPath) {
+      window.history.pushState({}, '', fullPath);
       setCurrentPath(path);
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
